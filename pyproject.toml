@@ -1,0 +1,21 @@
+[project]
+name = "conference-ai"
+version = "0.1.0"
+description = "Multi-agent conference planner"
+authors = [
+    {name = "Vadi",email = "ishaanvadi@gmail.com"}
+]
+requires-python = ">=3.11,<4.0.0"
+dependencies = [
+    "langchain-groq (>=1.1.2) ; python_version >= \"3.11\" and python_full_version < \"4.0.0\"",
+    "langchain-community (>=0.4.1,<0.5.0)",
+    "duckduckgo-search (>=8.1.1,<9.0.0)",
+    "langgraph (>=1.1.6,<2.0.0)",
+    "ddgs (>=9.13.1,<10.0.0)",
+    "rich (>=15.0.0,<16.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
