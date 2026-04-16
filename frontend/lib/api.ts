@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8000"
+const API_BASE = "https://weaslesandco-production.up.railway.app"
 
 export interface EventSpec {
   category: string
