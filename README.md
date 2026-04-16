@@ -242,8 +242,6 @@ Specific sites scraped include conference directories (indiaaisummit.in, ai4indi
 - **Render free tier cold starts**: The backend spins down after 15 minutes of inactivity. First request after inactivity takes ~50 seconds to wake up.
 - **Groq rate limits**: 100k tokens/day on free tier. Cache fallback mitigates this for demos.
 - **RAG quality**: Search results are not always perfectly relevant to the event type. A production system would use curated conference databases.
-- **No real-time data**: Speaker influence scores and sponsor budgets are estimated by the LLM, not pulled from live APIs.
-
 ---
 
 ## Running Locally
