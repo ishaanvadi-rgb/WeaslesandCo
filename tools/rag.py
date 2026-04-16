@@ -1,38 +1,22 @@
-import chromadb
-from chromadb.utils import embedding_functions
+from sentence_transformers import SentenceTransformer
+import numpy as np
 from typing import List
 
+model = SentenceTransformer("all-MiniLM-L6-v2")
 
-# Initialize ChromaDB in-memory (resets each run — perfect for our use case)
-client = chromadb.Client()
-
-# Use sentence-transformers for embeddings — runs locally, no API needed
-embedding_fn = embedding_functions.SentenceTransformerEmbeddingFunction(
-    model_name="all-MiniLM-L6-v2"
-)
-
-# One collection per run
-collection = None
+# Simple in-memory store
+_documents = []
+_embeddings = []
 
 
 def init_collection():
-    global collection
-    global client
-    # Fresh client each time
-    client = chromadb.Client()
-    collection = client.create_collection(
-        name="conference_intel",
-        embedding_function=embedding_fn,
-    )
+    global _documents, _embeddings
+    _documents = []
+    _embeddings = []
     print("[RAG] Collection initialized")
 
 
 def chunk_text(text: str, chunk_size: int = 300, overlap: int = 50) -> List[str]:
-    """
-    Splits text into overlapping chunks.
-    overlap means consecutive chunks share some text — 
-    so context at chunk boundaries isn't lost.
-    """
     chunks = []
     start = 0
     while start < len(text):
@@ -43,48 +27,36 @@ def chunk_text(text: str, chunk_size: int = 300, overlap: int = 50) -> List[str]
 
 
 def add_documents(texts: List[str], source: str):
-    """
-    Chunks and embeds a list of texts, stores in ChromaDB.
-    source is metadata so we know where each chunk came from.
-    """
-    if collection is None:
-        init_collection()
+    global _documents, _embeddings
 
     all_chunks = []
-    all_ids = []
-    all_metadata = []
+    for text in texts:
+        all_chunks.extend(chunk_text(text))
 
-    for i, text in enumerate(texts):
-        chunks = chunk_text(text)
-        for j, chunk in enumerate(chunks):
-            all_chunks.append(chunk)
-            all_ids.append(f"{source}_{i}_{j}")
-            all_metadata.append({"source": source})
+    if not all_chunks:
+        return
 
-    if all_chunks:
-        collection.add(
-            documents=all_chunks,
-            ids=all_ids,
-            metadatas=all_metadata,
-        )
-        print(f"[RAG] Added {len(all_chunks)} chunks from {source}")
+    embeddings = model.encode(all_chunks)
+    _documents.extend(all_chunks)
+    _embeddings.extend(embeddings)
+    print(f"[RAG] Added {len(all_chunks)} chunks from {source}")
 
 
 def query(question: str, n_results: int = 4) -> str:
-    """
-    Queries ChromaDB for the most relevant chunks.
-    Returns them as a single string for the LLM prompt.
-    """
-    if collection is None or collection.count() == 0:
+    global _documents, _embeddings
+
+    if not _documents:
         return "No past event intelligence available."
 
-    results = collection.query(
-        query_texts=[question],
-        n_results=min(n_results, collection.count()),
-    )
+    query_embedding = model.encode([question])[0]
+    embeddings_matrix = np.array(_embeddings)
 
-    chunks = results["documents"][0] if results["documents"] else []
-    if not chunks:
-        return "No relevant context found."
+    # Cosine similarity
+    norms = np.linalg.norm(embeddings_matrix, axis=1) * np.linalg.norm(query_embedding)
+    norms = np.where(norms == 0, 1, norms)
+    similarities = np.dot(embeddings_matrix, query_embedding) / norms
 
-    return "\n---\n".join(chunks)
+    top_indices = np.argsort(similarities)[-n_results:][::-1]
+    top_chunks = [_documents[i] for i in top_indices]
+
+    return "\n---\n".join(top_chunks)

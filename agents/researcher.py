@@ -27,7 +27,7 @@ def researcher_node(state: ConferenceState) -> dict:
     init_collection()
 
     # Search for past events
-    query = f"{spec['category']} conference {spec['geography']} 2024 2025 sponsors speakers"
+    query = f"{spec['category']} event {spec['geography']} 2024 2025 official site"
     results = web_search(query, max_results=4)
 
     if not results:

@@ -7,8 +7,8 @@ def web_search(query: str, max_results: int = 3) -> list[dict]:
     # Small random delay to avoid parallel request blocking
     time.sleep(random.uniform(1, 3))
     try:
-        with DDGS() as ddgs:
-            results = list(ddgs.text(query, max_results=max_results, timeout=15))
+        with DDGS(timeout=15) as ddgs:
+            results = list(ddgs.text(query, max_results=max_results))
         return results
     except Exception as e:
         print(f"[Search] Failed: {e}")

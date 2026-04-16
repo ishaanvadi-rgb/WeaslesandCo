@@ -1,18 +1,27 @@
-let conferenceResults: any = null
-let eventSpec: any = null
-
 export function setResults(data: any) {
-  conferenceResults = data
+  if (typeof window !== "undefined") {
+    localStorage.setItem("conferenceResults", JSON.stringify(data))
+  }
 }
 
 export function getResults() {
-  return conferenceResults
+  if (typeof window !== "undefined") {
+    const stored = localStorage.getItem("conferenceResults")
+    return stored ? JSON.parse(stored) : null
+  }
+  return null
 }
 
 export function setEventSpec(spec: any) {
-  eventSpec = spec
+  if (typeof window !== "undefined") {
+    localStorage.setItem("eventSpec", JSON.stringify(spec))
+  }
 }
 
 export function getEventSpec() {
-  return eventSpec
+  if (typeof window !== "undefined") {
+    const stored = localStorage.getItem("eventSpec")
+    return stored ? JSON.parse(stored) : null
+  }
+  return null
 }
