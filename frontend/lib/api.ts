@@ -1,4 +1,4 @@
-const API_BASE = "https://weaslesandco-production.up.railway.app"
+const API_BASE = "https://weaslesandco.onrender.com"
 
 export interface EventSpec {
   category: string
