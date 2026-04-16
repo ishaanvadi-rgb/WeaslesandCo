@@ -6,211 +6,201 @@
   },
   "sponsors": [
     {
-      "name": "Jio Platforms Limited",
+      "name": "Tata Consultancy Services",
       "tier": "Title",
       "relevance_score": 9,
-      "why": "As a leading Indian company with a strong focus on AI, Jio Platforms Limited is likely to sponsor an AI event in India",
-      "approach": "Reach out to Abhishek Farkade, SVP - Product & Engineering, GenAI & AI Platforms"
-    },
-    {
-      "name": "Meta",
-      "tier": "Gold",
-      "relevance_score": 8,
-      "why": "As a previous silver supporter of AI Days, Meta has shown interest in sponsoring AI events in India",
-      "approach": "Contact Meta's Indian office to discuss potential sponsorship opportunities"
+      "why": "As a leading Indian company with significant investments in AI research and development, TCS would be a natural fit to sponsor an AI event in India",
+      "approach": "Reach out to their corporate marketing team to discuss sponsorship opportunities"
     },
     {
       "name": "Infosys",
       "tier": "Gold",
+      "relevance_score": 8.5,
+      "why": "Infosys has a strong presence in India and has made notable investments in AI, making them a likely sponsor for an AI event",
+      "approach": "Contact their innovation and technology team to explore sponsorship possibilities"
+    },
+    {
+      "name": "Google",
+      "tier": "Gold",
       "relevance_score": 8,
-      "why": "As a leading Indian tech company, Infosys is likely to be interested in sponsoring an AI event in India",
-      "approach": "Reach out to Infosys's innovation team to discuss potential sponsorship opportunities"
+      "why": "As a global AI leader with a significant presence in India, Google would be interested in sponsoring an AI event to showcase their technologies and expertise",
+      "approach": "Reach out to their India marketing team to discuss potential sponsorship opportunities"
     },
     {
       "name": "Wipro",
       "tier": "Silver",
+      "relevance_score": 7.5,
+      "why": "Wipro has a strong AI practice in India and would be a good fit to sponsor an AI event, especially with their focus on innovation and digital transformation",
+      "approach": "Contact their business development team to explore sponsorship possibilities"
+    },
+    {
+      "name": "Microsoft",
+      "tier": "Silver",
       "relevance_score": 7,
-      "why": "As another major Indian tech company, Wipro may be interested in sponsoring an AI event in India",
-      "approach": "Contact Wipro's marketing team to discuss potential sponsorship opportunities"
+      "why": "Microsoft has a significant presence in India and has made notable investments in AI, making them a potential sponsor for an AI event",
+      "approach": "Reach out to their India marketing team to discuss potential sponsorship opportunities"
     },
     {
-      "name": "Indian Ministry of Electronics and Information Technology",
+      "name": "IBM",
       "tier": "Community",
-      "relevance_score": 6,
-      "why": "As a government institution, the Ministry may be interested in supporting an AI event in India",
-      "approach": "Reach out to the Ministry's department of IT and electronics to discuss potential sponsorship opportunities"
-    },
-    {
-      "name": "Software Technology Parks of India",
-      "tier": "Community",
-      "relevance_score": 6,
-      "why": "As an organization that supports IT and electronics in India, STPI may be interested in sponsoring an AI event",
-      "approach": "Contact Shri Arvind Kumar, Director General of STPI, to discuss potential sponsorship opportunities"
+      "relevance_score": 6.5,
+      "why": "IBM has a long history of investing in AI research and development and has a presence in India, making them a potential sponsor for an AI event",
+      "approach": "Contact their India research team to explore potential sponsorship opportunities"
     }
   ],
   "speakers": [
     {
-      "name": "Abhishek Farkade",
-      "title": "SVP - Product & Engineering, GenAI & AI Platforms, Jio Platforms Limited",
-      "expertise": "AI Solution Development",
-      "suggested_slot": "Keynote: AI in Telecom",
+      "name": "Dr. Gaurav Sharma",
+      "title": "Professor, Indian Institute of Science (IISc)",
+      "expertise": "Machine Learning",
+      "suggested_slot": "Keynote: AI in Education",
       "influence_score": 9,
-      "why": "As a leader in Jio Platforms, Abhishek can share insights on implementing AI in the Indian telecom industry."
+      "why": "As a renowned professor at IISc, Dr. Sharma can share insights on AI's impact on education in India."
     },
     {
-      "name": "Akhilesh Tuteja",
-      "title": "Partner & National Leader, Cl",
-      "expertise": "AI Strategy Consulting",
-      "suggested_slot": "Panel: AI Adoption in Indian Businesses",
+      "name": "Manoj Jain",
+      "title": "CMD, Bharat Electronics Limited (BEL)",
+      "expertise": "AI Defence",
+      "suggested_slot": "Keynote: AI in Defence",
       "influence_score": 8,
-      "why": "Akhilesh's experience in consulting can provide valuable perspectives on AI adoption in Indian companies."
+      "why": "Having spoken at the AI for India Summit 2025, Manoj Jain can provide valuable insights on AI's applications in defence."
     },
     {
-      "name": "Shri Arvind Kumar",
-      "title": "Director General, Software Technology Parks of India",
-      "expertise": "AI Policy Making",
-      "suggested_slot": "Talk: AI Policy and Regulations in India",
-      "influence_score": 9,
-      "why": "As the Director General of STPI, Shri Arvind Kumar can discuss the current AI policies and future directions in India."
-    },
-    {
-      "name": "Dr. Pankaj Jalote",
-      "title": "Director, Indraprastha Institute of Information Technology, Delhi",
-      "expertise": "AI Research Development",
-      "suggested_slot": "Workshop: AI Research and Innovation",
-      "influence_score": 8,
-      "why": "As a renowned academic, Dr. Pankaj Jalote can lead a workshop on AI research and innovation in Indian institutions."
-    },
-    {
-      "name": "Andrew Ng",
-      "title": "Founder, AI Fund and former Chief Scientist, Baidu",
-      "expertise": "AI Global Trends",
-      "suggested_slot": "Keynote: Global AI Trends and Future Directions",
-      "influence_score": 10,
-      "why": "As a global AI expert, Andrew Ng can provide a comprehensive overview of AI trends and future directions worldwide."
-    },
-    {
-      "name": "Dr. Gaurav Gupta",
-      "title": "Assistant Professor, Indian Institute of Technology, Bombay",
-      "expertise": "AI Machine Learning",
-      "suggested_slot": "Talk: Advances in AI and Machine Learning",
+      "name": "Dr. S. Sundararajan",
+      "title": "Professor, Indian Institute of Technology (IIT) Delhi",
+      "expertise": "Deep Learning",
+      "suggested_slot": "Talk: Advances in Deep Learning",
       "influence_score": 7,
-      "why": "As a researcher and academic, Dr. Gaurav Gupta can share recent advances and breakthroughs in AI and machine learning."
+      "why": "As a professor at IIT Delhi, Dr. Sundararajan can share his expertise on the latest developments in deep learning."
+    },
+    {
+      "name": "Rohini Srivathsa",
+      "title": "National Technology Officer, Microsoft India",
+      "expertise": "AI Applications",
+      "suggested_slot": "Panel: AI Adoption in Industries",
+      "influence_score": 8,
+      "why": "With her experience at Microsoft India, Rohini can provide insights on AI adoption in various industries."
+    },
+    {
+      "name": "Dr. Venkatesh Babu",
+      "title": "Professor, Indian Institute of Science (IISc)",
+      "expertise": "Computer Vision",
+      "suggested_slot": "Workshop: Computer Vision for Social Good",
+      "influence_score": 8,
+      "why": "Dr. Babu's expertise in computer vision can help participants understand its applications in social good projects."
+    },
+    {
+      "name": "Ganesh Padmanabhan",
+      "title": "Director, Analytics and AI, Tata Consultancy Services (TCS)",
+      "expertise": "AI Solutions",
+      "suggested_slot": "Talk: Building Scalable AI Solutions",
+      "influence_score": 7,
+      "why": "With his experience at TCS, Ganesh can share his knowledge on building scalable AI solutions for businesses."
     }
   ],
   "venues": [
     {
-      "name": "The Lalit Ashok, Bengaluru",
-      "city": "Bengaluru",
-      "capacity": 1200,
-      "type": "Hotel Ballroom",
+      "name": "India Expo Centre & Mart",
+      "city": "Greater Noida",
+      "capacity": 2500,
+      "type": "Exhibition Hall",
       "pros": [
-        "State-of-the-art audio-visual equipment",
-        "Spacious ballrooms",
-        "Excellent networking opportunities"
+        "Easy access to public transportation",
+        "Accommodation options nearby",
+        "State-of-the-art facilities"
       ],
       "cons": [
-        "Parking can be a challenge"
+        "Far from city center"
       ],
       "estimated_daily_cost_usd": 6000,
       "fit_score": 9
     },
     {
-      "name": "The Leela Ambience Convention Hotel, Delhi",
-      "city": "Delhi",
-      "capacity": 1500,
+      "name": "Bangalore International Exhibition Centre (BIEC)",
+      "city": "Bengaluru",
+      "capacity": 2000,
       "type": "Convention Center",
       "pros": [
-        "State-of-the-art audio-visual equipment",
-        "Spacious convention center",
-        "Excellent networking opportunities"
+        "Central location",
+        "Easy access to public transportation",
+        "Accommodation options nearby"
       ],
       "cons": [
-        "Traffic in Delhi can be challenging"
-      ],
-      "estimated_daily_cost_usd": 7000,
-      "fit_score": 8.5
-    },
-    {
-      "name": "The Grand Hyatt, Mumbai",
-      "city": "Mumbai",
-      "capacity": 1200,
-      "type": "Hotel Ballroom",
-      "pros": [
-        "State-of-the-art audio-visual equipment",
-        "Spacious ballrooms",
-        "Excellent networking opportunities"
-      ],
-      "cons": [
-        "Parking can be a challenge"
-      ],
-      "estimated_daily_cost_usd": 8000,
-      "fit_score": 8.5
-    },
-    {
-      "name": "The ITC Grand Chola, Chennai",
-      "city": "Chennai",
-      "capacity": 1000,
-      "type": "Hotel Ballroom",
-      "pros": [
-        "State-of-the-art audio-visual equipment",
-        "Spacious ballrooms",
-        "Excellent networking opportunities"
-      ],
-      "cons": [
-        "Limited parking options"
+        "Limited parking space"
       ],
       "estimated_daily_cost_usd": 5500,
+      "fit_score": 8.5
+    },
+    {
+      "name": "Jio World Convention Centre",
+      "city": "Mumbai",
+      "capacity": 2000,
+      "type": "Convention Center",
+      "pros": [
+        "Central location",
+        "Easy access to public transportation",
+        "Accommodation options nearby"
+      ],
+      "cons": [
+        "Limited parking space"
+      ],
+      "estimated_daily_cost_usd": 6500,
+      "fit_score": 8.5
+    },
+    {
+      "name": "Pragati Maidan",
+      "city": "New Delhi",
+      "capacity": 2500,
+      "type": "Exhibition Hall",
+      "pros": [
+        "Central location",
+        "Easy access to public transportation",
+        "Accommodation options nearby"
+      ],
+      "cons": [
+        "Limited parking space"
+      ],
+      "estimated_daily_cost_usd": 7000,
       "fit_score": 8
     },
     {
-      "name": "The Hyatt Regency, Bengaluru",
-      "city": "Bengaluru",
-      "capacity": 1000,
+      "name": "The Leela Ambience Convention Hotel",
+      "city": "New Delhi",
+      "capacity": 1500,
       "type": "Hotel Ballroom",
       "pros": [
-        "State-of-the-art audio-visual equipment",
-        "Spacious ballrooms",
-        "Excellent networking opportunities"
+        "Central location",
+        "Easy access to public transportation",
+        "Accommodation options nearby"
       ],
       "cons": [
-        "Parking can be a challenge"
+        "Limited capacity"
       ],
-      "estimated_daily_cost_usd": 6500,
-      "fit_score": 8
+      "estimated_daily_cost_usd": 4500,
+      "fit_score": 7
     }
   ],
   "pricing": {
     "ticket_tiers": [
       {
-        "name": "Early Bird (Student)",
-        "price_usd": 30,
-        "perks": "10% discount for students with valid ID"
-      },
-      {
-        "name": "Early Bird (Startup)",
-        "price_usd": 50,
-        "perks": "20% discount for startups with valid ID"
-      },
-      {
-        "name": "Early Bird (General)",
-        "price_usd": 75,
-        "perks": "15% discount for early bird registrations"
+        "name": "Early Bird",
+        "price_usd": 150,
+        "perks": "10% discount, priority access to keynotes, and exclusive networking opportunities"
       },
       {
         "name": "Standard",
-        "price_usd": 150,
-        "perks": "Access to all sessions, networking opportunities"
+        "price_usd": 200,
+        "perks": "access to keynotes, panel discussions, and startup showcase"
       },
       {
         "name": "VIP",
-        "price_usd": 400,
-        "perks": "Exclusive meet-and-greet with speakers, priority access to sessions"
+        "price_usd": 300,
+        "perks": "priority access to keynotes, exclusive networking opportunities, and a private meet-and-greet with speakers"
       },
       {
         "name": "Virtual",
-        "price_usd": 20,
-        "perks": "Access to live streaming of all sessions"
+        "price_usd": 50,
+        "perks": "access to live stream, recorded sessions, and exclusive virtual networking opportunities"
       }
     ],
     "attendance_forecast": {
@@ -219,77 +209,85 @@
       "conservative": 600
     },
     "revenue_projection_usd": {
-      "from_tickets": 108000,
+      "from_tickets": 180000,
       "from_sponsorships": 50000,
-      "total": 158000
+      "total": 230000
     },
-    "rationale": "Based on research of similar AI conferences in India and internationally, we have set competitive ticket prices with discounts for students, startups, and early bird registrations. Our revenue projection is based on an optimistic attendance forecast of 1200 attendees, with a total revenue of $158,000."
+    "rationale": "Given the unknown ticket price range at similar events, we've adopted a tiered pricing strategy with early bird discounts to incentivize registrations. Prices range from $150 to $300 for in-person tickets, with a virtual option at $50, to cater to different segments of the audience."
   },
   "gtm_plan": {
     "target_segments": [
-      "Indian tech community",
-      "AI enthusiasts",
-      "industry professionals",
-      "IT professionals",
-      "researchers",
-      "startups",
-      "students"
+      "AI professionals",
+      "Industry experts",
+      "Innovators",
+      "Startups",
+      "Students",
+      "Researchers"
     ],
     "channels": [
       {
         "name": "LinkedIn",
-        "strategy": "Create engaging content (blog posts, videos, podcasts) to showcase the conference's value proposition and attract attendees. Utilize LinkedIn Ads to target relevant professionals and organizations.",
+        "strategy": "Create engaging content (articles, videos, podcasts) highlighting the latest AI trends and advancements, and utilize LinkedIn groups to reach AI professionals and industry experts.",
         "budget_percent": 30
       },
       {
         "name": "Twitter/X",
-        "strategy": "Utilize Twitter Ads to target relevant professionals and organizations. Share engaging content, such as tweets, videos, and live streams, to create buzz around the conference.",
-        "budget_percent": 20
-      },
-      {
-        "name": "Facebook/Instagram",
-        "strategy": "Utilize Facebook and Instagram Ads to target relevant professionals and organizations. Create engaging content, such as videos, stories, and reels, to create buzz around the conference.",
+        "strategy": "Utilize hashtags to create buzz around the event, share updates, and engage with attendees and speakers on Twitter.",
         "budget_percent": 20
       },
       {
         "name": "Email Marketing",
-        "strategy": "Create targeted email campaigns to promote the conference to relevant professionals and organizations. Utilize email marketing automation tools to personalize and optimize email campaigns.",
-        "budget_percent": 30
+        "strategy": "Send targeted email campaigns to subscribers, highlighting key speakers, sessions, and networking opportunities.",
+        "budget_percent": 20
+      },
+      {
+        "name": "Indian AI Communities",
+        "strategy": "Partner with Indian AI communities, startups, and universities to promote the conference and offer exclusive discounts to their members.",
+        "budget_percent": 15
+      },
+      {
+        "name": "Influencer Marketing",
+        "strategy": "Collaborate with AI influencers and thought leaders to promote the event and share their experiences with their followers.",
+        "budget_percent": 10
+      },
+      {
+        "name": "Content Marketing",
+        "strategy": "Create informative blog posts, whitepapers, and case studies highlighting the benefits of AI in India, and share them on the event website and social media channels.",
+        "budget_percent": 5
       }
     ],
     "timeline": [
       {
         "weeks_before": 16,
-        "action": "Launch event website and early bird tickets. Utilize social media to create buzz around the conference."
+        "action": "Launch event website and early bird tickets, and start promoting the event on social media and email marketing campaigns."
       },
       {
         "weeks_before": 12,
-        "action": "Create and publish engaging content (blog posts, videos, podcasts) to showcase the conference's value proposition and attract attendees."
+        "action": "Send targeted email campaigns to subscribers, and start partnering with Indian AI communities, startups, and universities."
       },
       {
         "weeks_before": 8,
-        "action": "Utilize online advertising (LinkedIn Ads, Twitter Ads, Facebook Ads) to target relevant professionals and organizations."
+        "action": "Launch influencer marketing campaigns, and start creating engaging content (articles, videos, podcasts) highlighting the latest AI trends and advancements."
       },
       {
         "weeks_before": 4,
-        "action": "Create and send targeted email campaigns to promote the conference to relevant professionals and organizations."
+        "action": "Send reminders to attendees, and start promoting the event on Twitter and LinkedIn."
       },
       {
         "weeks_before": 2,
-        "action": "Utilize social media to create buzz around the conference. Share engaging content, such as tweets, videos, and live streams."
+        "action": "Host a pre-event hackathon or startup pitch competition to attract a wider audience."
       }
     ],
     "key_messages": [
-      "India's premier AI conference featuring 60+ speakers and cutting-edge AI innovations.",
-      "Join us for AI Days 2025, India's leading artificial intelligence conference.",
-      "Meet the experts and thought leaders in the AI industry.",
-      "Discover the latest AI trends and innovations.",
-      "Network with AI professionals and organizations."
+      "Explore the latest trends, advancements, and applications of AI technology in India.",
+      "Network with thought leaders, industry experts, and innovators from the AI sector.",
+      "Discover new opportunities and challenges in AI adoption and deployment in India."
     ],
     "outreach_templates": {
-      "sponsor_subject": "Partner with us to showcase your organization's expertise in AI.",
-      "speaker_subject": "Join us as a speaker and share your knowledge with the AI community.",
-      "email_body": "Dear [Name],\n\nWe are excited to invite you to AI Days 2025, India's premier AI conference. The conference will feature 60+ speakers and cutting-edge AI innovations. We believe that your expertise and knowledge would be a valuable addition to the conference.\n\nPlease find the details of the conference below:\n\n* Date: [Date]\n* Location: [Location]\n* Speakers: [Speakers]\n\nWe would be happy to discuss further and answer any questions you may have. Please feel free to reach out to us.\n\nBest regards,\n[Your Name]"
+      "sponsor_subject": "Exclusive Partnership Opportunities for AI in India Summit",
+      "speaker_subject": "Join the AI in India Summit as a Keynote Speaker or Panelist",
+      "student_subject": "Get Exclusive Discounts on AI in India Summit Tickets for Students",
+      "startup_subject": "Apply for AI in India Summit Startup Pitch Competition"
     }
   },
   "ops_timeline": [
@@ -313,34 +311,19 @@
           "priority": "High"
         },
         {
-          "task": "Research and book speakers",
-          "owner": "Speaker team",
+          "task": "Research and select ticketing platform",
+          "owner": "Organizer team",
           "priority": "Medium"
         },
         {
-          "task": "Research and book sponsors",
-          "owner": "Sponsor team",
+          "task": "Develop event website and registration process",
+          "owner": "Organizer team",
           "priority": "Medium"
         },
         {
-          "task": "Develop event marketing strategy",
+          "task": "Create event social media accounts and content calendar",
           "owner": "Marketing team",
           "priority": "Medium"
-        },
-        {
-          "task": "Create event website and registration process",
-          "owner": "Organizer team",
-          "priority": "Medium"
-        },
-        {
-          "task": "Plan catering and F&B options",
-          "owner": "Organizer team",
-          "priority": "Low"
-        },
-        {
-          "task": "Plan event decor and ambiance",
-          "owner": "Organizer team",
-          "priority": "Low"
         }
       ]
     },
@@ -349,32 +332,27 @@
       "weeks_before_event": 16,
       "tasks": [
         {
-          "task": "Confirm venue details and logistics",
+          "task": "Finalize venue details and contracts",
           "owner": "Organizer team",
           "priority": "High"
         },
         {
-          "task": "Arrange for audio-visual equipment and technical support",
+          "task": "Arrange for catering and beverages",
           "owner": "Organizer team",
-          "priority": "High"
+          "priority": "Medium"
         },
         {
-          "task": "Book accommodations for speakers and sponsors",
+          "task": "Coordinate with venue for audio-visual and technical requirements",
+          "owner": "Organizer team",
+          "priority": "Medium"
+        },
+        {
+          "task": "Book accommodations for speakers and VIPs",
           "owner": "Organizer team",
           "priority": "Medium"
         },
         {
           "task": "Arrange for transportation and parking",
-          "owner": "Organizer team",
-          "priority": "Medium"
-        },
-        {
-          "task": "Plan event layout and seating",
-          "owner": "Organizer team",
-          "priority": "Medium"
-        },
-        {
-          "task": "Coordinate with venue staff and vendors",
           "owner": "Organizer team",
           "priority": "Low"
         }
@@ -385,27 +363,27 @@
       "weeks_before_event": 12,
       "tasks": [
         {
-          "task": "Confirm speaker details and bios",
+          "task": "Confirm speaker details and contracts",
           "owner": "Speaker team",
           "priority": "High"
         },
         {
-          "task": "Arrange for speaker travel and accommodations",
-          "owner": "Organizer team",
-          "priority": "High"
-        },
-        {
-          "task": "Coordinate speaker schedules and itineraries",
-          "owner": "Organizer team",
+          "task": "Coordinate speaker travel and accommodations",
+          "owner": "Speaker team",
           "priority": "Medium"
         },
         {
-          "task": "Plan speaker hospitality and perks",
-          "owner": "Organizer team",
+          "task": "Develop speaker presentation guidelines and requirements",
+          "owner": "Speaker team",
           "priority": "Medium"
         },
         {
-          "task": "Coordinate speaker communications and updates",
+          "task": "Arrange for speaker audio-visual and technical requirements",
+          "owner": "Speaker team",
+          "priority": "Medium"
+        },
+        {
+          "task": "Coordinate speaker interviews and media appearances",
           "owner": "Speaker team",
           "priority": "Low"
         }
@@ -416,27 +394,22 @@
       "weeks_before_event": 12,
       "tasks": [
         {
-          "task": "Confirm sponsor details and logos",
+          "task": "Confirm sponsor details and contracts",
           "owner": "Sponsor team",
           "priority": "High"
         },
         {
-          "task": "Arrange for sponsor travel and accommodations",
-          "owner": "Organizer team",
-          "priority": "High"
-        },
-        {
-          "task": "Coordinate sponsor schedules and itineraries",
-          "owner": "Organizer team",
+          "task": "Coordinate sponsor branding and marketing materials",
+          "owner": "Sponsor team",
           "priority": "Medium"
         },
         {
-          "task": "Plan sponsor hospitality and perks",
-          "owner": "Organizer team",
+          "task": "Arrange for sponsor audio-visual and technical requirements",
+          "owner": "Sponsor team",
           "priority": "Medium"
         },
         {
-          "task": "Coordinate sponsor communications and updates",
+          "task": "Coordinate sponsor networking and meet-and-greets",
           "owner": "Sponsor team",
           "priority": "Low"
         }
@@ -447,27 +420,27 @@
       "weeks_before_event": 8,
       "tasks": [
         {
-          "task": "Launch event website and registration process",
+          "task": "Develop and execute social media marketing campaign",
           "owner": "Marketing team",
           "priority": "High"
         },
         {
-          "task": "Create and distribute event promotional materials",
-          "owner": "Marketing team",
-          "priority": "High"
-        },
-        {
-          "task": "Develop and execute social media marketing plan",
+          "task": "Create and distribute promotional materials (flyers, posters, etc.)",
           "owner": "Marketing team",
           "priority": "Medium"
         },
         {
-          "task": "Plan and execute email marketing campaigns",
+          "task": "Coordinate with influencers and bloggers for event promotion",
           "owner": "Marketing team",
           "priority": "Medium"
         },
         {
-          "task": "Coordinate with influencers and ambassadors",
+          "task": "Develop and execute email marketing campaign",
+          "owner": "Marketing team",
+          "priority": "Medium"
+        },
+        {
+          "task": "Arrange for event press coverage and media outreach",
           "owner": "Marketing team",
           "priority": "Low"
         }
@@ -483,24 +456,24 @@
           "priority": "High"
         },
         {
-          "task": "Coordinate with speakers and sponsors",
+          "task": "Coordinate with speakers and sponsors for event day",
+          "owner": "Speaker team/Sponsor team",
+          "priority": "Medium"
+        },
+        {
+          "task": "Manage event registration and ticketing",
+          "owner": "Organizer team",
+          "priority": "Medium"
+        },
+        {
+          "task": "Coordinate with vendors and suppliers for event day",
+          "owner": "Organizer team",
+          "priority": "Medium"
+        },
+        {
+          "task": "Manage event day operations and logistics",
           "owner": "Organizer team",
           "priority": "High"
-        },
-        {
-          "task": "Manage event registration and check-in",
-          "owner": "Organizer team",
-          "priority": "Medium"
-        },
-        {
-          "task": "Coordinate with vendors and suppliers",
-          "owner": "Organizer team",
-          "priority": "Medium"
-        },
-        {
-          "task": "Monitor event progress and make adjustments",
-          "owner": "Organizer team",
-          "priority": "Low"
         }
       ]
     }
@@ -508,20 +481,20 @@
   "critic_scores": {
     "scores": {
       "sponsor": 9,
-      "speaker": 9,
+      "speaker": 8,
       "venue": 8,
-      "pricing": 8,
-      "gtm": 7
+      "pricing": 7,
+      "gtm": 8
     },
     "feedback": {
-      "sponsor": "The sponsor suggestions are highly relevant and specific to the Indian market, with a clear approach for outreach.",
-      "speaker": "The speaker suggestions are excellent, with a good mix of expertise and influence in the AI field, particularly in India.",
-      "venue": "The venue suggestions are good, but could be more detailed in terms of logistics and catering options.",
-      "pricing": "The pricing tiers are well-structured, but could benefit from more information on the perks and benefits for each tier.",
-      "gtm": "The GTM strategy is somewhat generic and could be more tailored to the specific event and target audience in India."
+      "sponsor": "The sponsor suggestions are highly relevant to the event, with a good mix of Indian companies and global leaders in AI.",
+      "speaker": "The speaker suggestions are relevant and have a good balance of expertise, but could benefit from more diversity in terms of industry representation.",
+      "venue": "The venue suggestions are suitable for the event, but the estimated daily costs could be more detailed, including breakdowns of expenses.",
+      "pricing": "The pricing tiers are clear, but the perks for each tier could be more detailed and creative to attract a wider range of attendees.",
+      "gtm": "The GTM strategy is comprehensive, but could benefit from more specific metrics for measuring success and a clearer allocation of budget across channels."
     },
     "needs_retry": [
-      "gtm"
+      "pricing"
     ]
   }
 }

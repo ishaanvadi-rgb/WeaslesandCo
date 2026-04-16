@@ -1,12 +1,30 @@
-from sentence_transformers import SentenceTransformer
+import os
+import requests
 import numpy as np
 from typing import List
+from dotenv import load_dotenv
 
-model = SentenceTransformer("all-MiniLM-L6-v2")
+load_dotenv()
 
-# Simple in-memory store
+HF_API_URL = "https://router.huggingface.co/hf-inference/models/sentence-transformers/all-MiniLM-L6-v2/pipeline/feature-extraction"
+HF_TOKEN = os.getenv("HF_TOKEN", "")
+
 _documents = []
 _embeddings = []
+
+
+def get_embeddings(texts: List[str]) -> List[List[float]]:
+    headers = {"Authorization": f"Bearer {HF_TOKEN}"}
+    response = requests.post(
+        HF_API_URL,
+        headers=headers,
+        json={"inputs": texts, "options": {"wait_for_model": True}},
+        timeout=30,
+    )
+    if response.status_code == 200:
+        return response.json()
+    print(f"[RAG] Embedding API error: {response.status_code} {response.text[:100]}")
+    return [[0.0] * 384 for _ in texts]
 
 
 def init_collection():
@@ -36,27 +54,30 @@ def add_documents(texts: List[str], source: str):
     if not all_chunks:
         return
 
-    embeddings = model.encode(all_chunks)
-    _documents.extend(all_chunks)
-    _embeddings.extend(embeddings)
-    print(f"[RAG] Added {len(all_chunks)} chunks from {source}")
+    try:
+        embeddings = get_embeddings(all_chunks)
+        _documents.extend(all_chunks)
+        _embeddings.extend(embeddings)
+        print(f"[RAG] Added {len(all_chunks)} chunks from {source}")
+    except Exception as e:
+        print(f"[RAG] Failed: {e}")
 
 
 def query(question: str, n_results: int = 4) -> str:
-    global _documents, _embeddings
-
     if not _documents:
         return "No past event intelligence available."
 
-    query_embedding = model.encode([question])[0]
-    embeddings_matrix = np.array(_embeddings)
+    try:
+        query_embedding = get_embeddings([question])[0]
+        embeddings_matrix = np.array(_embeddings)
+        query_vec = np.array(query_embedding)
 
-    # Cosine similarity
-    norms = np.linalg.norm(embeddings_matrix, axis=1) * np.linalg.norm(query_embedding)
-    norms = np.where(norms == 0, 1, norms)
-    similarities = np.dot(embeddings_matrix, query_embedding) / norms
+        norms = np.linalg.norm(embeddings_matrix, axis=1) * np.linalg.norm(query_vec)
+        norms = np.where(norms == 0, 1, norms)
+        similarities = np.dot(embeddings_matrix, query_vec) / norms
 
-    top_indices = np.argsort(similarities)[-n_results:][::-1]
-    top_chunks = [_documents[i] for i in top_indices]
-
-    return "\n---\n".join(top_chunks)
+        top_indices = np.argsort(similarities)[-n_results:][::-1]
+        return "\n---\n".join([_documents[i] for i in top_indices])
+    except Exception as e:
+        print(f"[RAG] Query failed: {e}")
+        return "No relevant context found."
