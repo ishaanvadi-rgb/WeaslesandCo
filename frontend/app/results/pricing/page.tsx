@@ -62,7 +62,7 @@ export default function PricingPage() {
               <CardContent className="space-y-4">
                 <div>
                   <span className="text-3xl font-bold text-foreground">${tier.price_usd}</span>
-                  <span className="text-muted-foreground">/ticket</span>
+                  <span className="text-muted-foreground"> USD/ticket</span>
                 </div>
                 <p className="text-sm text-muted-foreground">{tier.perks}</p>
               </CardContent>
