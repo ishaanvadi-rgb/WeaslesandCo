@@ -1,8 +1,8 @@
 import json
 from langchain_core.messages import SystemMessage, HumanMessage
-from llm import llm
+from llm import llm_small as llm
 from state import ConferenceState
-from tools.search import web_search, format_results
+from tools.rag import query
 
 
 def gtm_node(state: ConferenceState) -> dict:
@@ -12,9 +12,7 @@ def gtm_node(state: ConferenceState) -> dict:
 
     print(f"\n[GTM Agent] Building go-to-market plan...")
 
-    query = f"{spec['category']} conference marketing promotion {spec['geography']} strategy"
-    results = web_search(query, max_results=5)
-    all_results = format_results(results)
+    context = query(f"marketing promotion channels {spec['category']} conference {spec['geography']}")
 
     system_prompt = """You are a go-to-market strategy agent for conference planning.
 
@@ -39,8 +37,8 @@ Return ONLY valid JSON, nothing else:
     human_message = f"""Event: {spec['category']} in {spec['geography']} for {spec['audience_size']} people
 Instructions: {instructions}
 
-Market context:
-{all_results}
+Relevant context from past events:
+{context}
 
 Create a GTM plan."""
 

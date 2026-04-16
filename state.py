@@ -27,6 +27,9 @@ class ConferenceState(TypedDict):
     needs_retry: Optional[List[str]]
     retry_count: Optional[int]
 
+    # Past event intelligence
+    past_event_intel: Optional[dict]       # Scraped from real past conferences
+
     # Final
     final_report: Optional[str]
     errors: Optional[List[str]]

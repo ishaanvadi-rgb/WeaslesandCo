@@ -2,7 +2,7 @@ import json
 from langchain_core.messages import SystemMessage, HumanMessage
 from llm import llm
 from state import ConferenceState
-from tools.search import web_search, format_results
+from tools.rag import query
 
 
 def speaker_node(state: ConferenceState) -> dict:
@@ -10,18 +10,12 @@ def speaker_node(state: ConferenceState) -> dict:
     plan = json.loads(state["plan"])
     instructions = plan["agent_instructions"]["speaker"]
 
-    print(f"\n[Speaker Agent] Searching for speakers...")
+    print(f"\n[Speaker Agent] Finding speakers...")
 
-    query1 = f"{spec['category']} conference speakers {spec['geography']} keynote 2024 2025"
-    query2 = f"top {spec['category']} researchers experts {spec['geography']}"
+    context = query(f"speakers keynote experts {spec['category']} conference {spec['geography']}")
 
-    results1 = web_search(query1, max_results=4)
-    results2 = web_search(query2, max_results=4)
-
-    all_results = format_results(results1 + results2)
-
-    system_prompt = """You are a speaker discovery agent for conference planning.
-Based on search results, identify relevant speakers and map them to agenda slots.
+    system_prompt = """You are a speaker discovery agent.
+Based on context and your knowledge, identify relevant speakers and map them to agenda slots.
 
 Return ONLY a valid JSON array, nothing else:
 [
@@ -38,8 +32,8 @@ Return ONLY a valid JSON array, nothing else:
     human_message = f"""Event: {spec['category']} in {spec['geography']} for {spec['audience_size']} people
 Instructions: {instructions}
 
-Search results:
-{all_results}
+Relevant context from past events:
+{context}
 
 Find 6 speakers and assign each to a specific agenda slot."""
 

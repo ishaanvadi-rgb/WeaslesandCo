@@ -1,6 +1,6 @@
 import json
 from langchain_core.messages import SystemMessage, HumanMessage
-from llm import llm
+from llm import llm_small as llm
 from state import ConferenceState
 
 

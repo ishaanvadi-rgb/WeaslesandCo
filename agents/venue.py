@@ -1,8 +1,8 @@
 import json
 from langchain_core.messages import SystemMessage, HumanMessage
-from llm import llm
+from llm import llm_small as llm
 from state import ConferenceState
-from tools.search import web_search, format_results
+from tools.rag import query
 
 
 def venue_node(state: ConferenceState) -> dict:
@@ -10,18 +10,12 @@ def venue_node(state: ConferenceState) -> dict:
     plan = json.loads(state["plan"])
     instructions = plan["agent_instructions"]["venue"]
 
-    print(f"\n[Venue Agent] Searching for venues...")
+    print(f"\n[Venue Agent] Finding venues...")
 
-    query1 = f"conference venue {spec['geography']} capacity {spec['audience_size']} people"
-    query2 = f"best {spec['category']} event venue {spec['geography']}"
+    context = query(f"venue conference hall {spec['geography']} capacity {spec['audience_size']}")
 
-    results1 = web_search(query1, max_results=4)
-    results2 = web_search(query2, max_results=3)
-
-    all_results = format_results(results1 + results2)
-
-    system_prompt = """You are a venue selection agent for conference planning.
-Based on search results, recommend and score suitable venues.
+    system_prompt = """You are a venue selection agent.
+Based on context and your knowledge, recommend suitable venues.
 
 Return ONLY a valid JSON array, nothing else:
 [
@@ -40,8 +34,8 @@ Return ONLY a valid JSON array, nothing else:
     human_message = f"""Event: {spec['category']} in {spec['geography']} for {spec['audience_size']} people
 Instructions: {instructions}
 
-Search results:
-{all_results}
+Relevant context:
+{context}
 
 Recommend 5 venues ranked by fit score."""
 
@@ -57,6 +51,8 @@ Recommend 5 venues ranked by fit score."""
             if raw.startswith("json"):
                 raw = raw[4:]
         venues = json.loads(raw.strip())
+        if not isinstance(venues, list):
+            venues = venues.get("venues", [])
     except json.JSONDecodeError:
         venues = [{"raw": response.content}]
 

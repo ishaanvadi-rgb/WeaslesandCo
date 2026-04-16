@@ -29,10 +29,28 @@ Return ONLY valid JSON in this exact format, nothing else:
   }
 }"""
 
+    # Pull in past event intel if available
+    intel = state.get("past_event_intel")
+    intel_section = ""
+    if intel and "raw" not in intel:
+        intel_section = f"""
+Past event intelligence (scraped from real conferences):
+- Events found: {[e.get('name') for e in intel.get('events_found', [])]}
+- Sponsors seen at similar events: {intel.get('sponsors_seen', [])}
+- Ticket price range at similar events: {intel.get('ticket_price_range', 'unknown')}
+- Key themes: {intel.get('key_themes', [])}
+- What worked: {intel.get('what_worked', '')}
+- Recommendations: {intel.get('recommendations', '')}
+
+Use this to make your plan more specific and grounded in reality.
+"""
+
     human_message = f"""Plan this conference:
 - Category: {spec['category']}
 - Geography: {spec['geography']}
-- Audience size: {spec['audience_size']}"""
+- Audience size: {spec['audience_size']}
+
+{intel_section}"""
 
     response = llm.invoke([
         SystemMessage(content=system_prompt),

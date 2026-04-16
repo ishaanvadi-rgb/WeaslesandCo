@@ -2,6 +2,7 @@ from langgraph.graph import StateGraph, END
 from state import ConferenceState
 from agents import (
     orchestrator_node,
+    critic_node,
     sponsor_node,
     speaker_node,
     venue_node,
@@ -9,6 +10,7 @@ from agents import (
     gtm_node,
     ops_node,
     critic_node,
+    researcher_node,
 )
 
 
@@ -64,7 +66,9 @@ def build_graph():
     workflow.add_node("retry", retry_node)
 
     # Entry point
-    workflow.set_entry_point("orchestrator")
+    workflow.add_node("researcher", researcher_node)
+    workflow.set_entry_point("researcher")
+    workflow.add_edge("researcher", "orchestrator")
 
     # Orchestrator → parallel research agents
     workflow.add_edge("orchestrator", "sponsor")

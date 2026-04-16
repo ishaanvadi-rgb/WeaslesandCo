@@ -30,6 +30,7 @@ def run(category: str, geography: str, audience_size: int):
         "critic_scores": None,
         "needs_retry": [],
         "retry_count": 0,
+        "past_event_intel": None,
         "final_report": None,
         "errors": [],
     }

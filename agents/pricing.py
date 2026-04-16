@@ -1,8 +1,8 @@
 import json
 from langchain_core.messages import SystemMessage, HumanMessage
-from llm import llm
+from llm import llm_small as llm
 from state import ConferenceState
-from tools.search import web_search, format_results
+from tools.rag import query
 
 
 def pricing_node(state: ConferenceState) -> dict:
@@ -10,18 +10,14 @@ def pricing_node(state: ConferenceState) -> dict:
     plan = json.loads(state["plan"])
     instructions = plan["agent_instructions"]["pricing"]
 
-    # Read venue agent's output
     venues = state.get("venues", [])
     top_venue_cost = venues[0].get("estimated_daily_cost_usd", "unknown") if venues else "unknown"
 
     print(f"\n[Pricing Agent] Building pricing strategy...")
 
-    query = f"{spec['category']} conference ticket price {spec['geography']} 2024 2025"
-    results = web_search(query, max_results=5)
-    all_results = format_results(results)
+    context = query(f"ticket price registration fee {spec['category']} conference {spec['geography']}")
 
     system_prompt = """You are a ticket pricing and revenue strategy agent.
-Based on market data and venue costs, create a pricing strategy.
 
 Return ONLY valid JSON, nothing else:
 {
@@ -48,8 +44,8 @@ Return ONLY valid JSON, nothing else:
 Instructions: {instructions}
 Top venue daily cost: ${top_venue_cost}
 
-Market data:
-{all_results}
+Relevant context from past events:
+{context}
 
 Create a ticket pricing strategy."""
 

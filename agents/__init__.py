@@ -6,3 +6,4 @@ from .pricing import pricing_node
 from .gtm import gtm_node
 from .ops import ops_node
 from .critic import critic_node
+from .researcher import researcher_node

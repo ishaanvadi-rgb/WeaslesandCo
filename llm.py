@@ -9,3 +9,9 @@ llm = ChatGroq(
     api_key=os.getenv("GROQ_API_KEY"),
     temperature=0.1,
 )
+
+llm_small = ChatGroq(
+    model="llama-3.1-8b-instant",
+    api_key=os.getenv("GROQ_API_KEY"),
+    temperature=0.1,
+)
