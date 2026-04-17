@@ -10,4 +10,4 @@ RUN poetry config virtualenvs.create false \
 
 COPY . .
 
-CMD uvicorn api:app --host 0.0.0.0 --port $PORT
+CMD uvicorn api:app --host 0.0.0.0 --port ${PORT:-8000}
